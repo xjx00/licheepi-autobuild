@@ -467,6 +467,7 @@ if [ "${1}" = "nano_spiflash" ]; then
 	u_boot_config_file="licheepi_nano_spiflash_defconfig"
 	build
 	pack_spiflash_normal_size_img
+	upload
 fi
 
 if [ "${1}" = "nano_tf" ]; then
@@ -475,6 +476,7 @@ if [ "${1}" = "nano_tf" ]; then
 	u_boot_boot_cmd_file="tf_boot.cmd"
 	build
 	pack_tf_normal_size_img
+	upload
 fi
 
 sleep 1
