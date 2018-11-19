@@ -2,7 +2,8 @@ sudo: required
 language: bash
 script:
   - chmod +x build.sh
-  - ./build.sh
+  - ./build.sh pull_all
+  - ./build.sh nano_tf
 after_success:
   - ls -l
 branches:
