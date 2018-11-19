@@ -1,0 +1,12 @@
+sudo: required
+language: bash
+script:
+  - chmod +x build.sh
+  - ./build.sh
+after_success:
+  - ls -l
+branches:
+  only:
+    - master
+  except:
+    - /^v\d.*$/
