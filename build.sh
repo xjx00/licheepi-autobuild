@@ -58,7 +58,7 @@ pull_toolchain(){
 	cd ${temp_root_dir}/${toolchain_dir}
 	ldconfig
 	if [ $(getconf WORD_BIT) = '32' ] && [ $(getconf LONG_BIT) = '64' ] ; then
-		wget http://releases.linaro.org/components/toolchain/binaries/7.3-2018.05/arm-linux-gnueabi/gcc-linaro-7.3.1-2018.05-x86_64_arm-linux-gnueabi.tar.xz
+		wget http://releases.linaro.org/components/toolchain/binaries/7.3-2018.05/arm-linux-gnueabi/gcc-linaro-7.3.1-2018.05-x86_64_arm-linux-gnueabi.tar.xz && tar xvf gcc-linaro-7.3.1-2018.05-x86_64_arm-linux-gnueabi.tar.xz
 		if [ ! -d ${temp_root_dir}/${toolchain_dir}/gcc-linaro-7.3.1-2018.05-x86_64_arm-linux-gnueabi ]; then
 			echo "Error:pull toolchain failed"
 	    		exit 0
