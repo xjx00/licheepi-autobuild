@@ -444,6 +444,17 @@ build(){
 	
 	
 }
+build_only_linux(){
+	check_env
+	update_env
+	echo "clean log ..."
+	clean_log
+	echo "clean output dir ..."
+	clean_output_dir
+	build_linux
+	echo "copy linux ..."
+	copy_linux
+}
 if [ "${1}" = "" ] && [ ! "${1}" = "nano_spiflash" ] && [ ! "${1}" = "nano_tf" ] && [ ! "${1}" = "pull_all" ]; then
     echo "Usage: build.sh [nano_spiflash | nano_tf | pull_all | clean]"
     exit 0
@@ -475,6 +486,14 @@ if [ "${1}" = "nano_tf" ]; then
 	u_boot_boot_cmd_file="tf_boot.cmd"
 	build
 	pack_tf_normal_size_img
+	upload
+fi
+
+if [ "${1}" = "nano_linux" ]; then
+	linux_config_file="licheepi_nano_spiflash_defconfig"
+	u_boot_config_file="licheepi_nano_defconfig"
+	u_boot_boot_cmd_file="tf_boot.cmd"
+	build_only_linux
 	upload
 fi
 
