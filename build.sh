@@ -164,7 +164,7 @@ build_uboot(){
 	echo "--->Get cpu info ..."
 	proc_processor=$(grep 'processor' /proc/cpuinfo | sort -u | wc -l)
 	echo "--->Compiling ..."
-  	make ARCH=arm CROSS_COMPILE=${cross_compiler}- -j${proc_processor} > ${temp_root_dir}/build_uboot.log 2>&1
+  	make ARCH=arm CROSS_COMPILE=${cross_compiler}- -j${proc_processor}
 
 	if [ $? -ne 0 ] || [ ! -f ${temp_root_dir}/${u_boot_dir}/u-boot ]; then
         	echo "Error: UBOOT NOT BUILD.Please Get Some Error From build_uboot.log"
@@ -207,7 +207,7 @@ build_linux(){
 	echo "--->Get cpu info ..."
 	proc_processor=$(grep 'processor' /proc/cpuinfo | sort -u | wc -l)
 	echo "--->Compiling ..."
-  	make ARCH=arm CROSS_COMPILE=${cross_compiler}- -j${proc_processor} > ${temp_root_dir}/build_linux.log 2>&1
+  	make ARCH=arm CROSS_COMPILE=${cross_compiler}- -j${proc_processor}
 
 	if [ $? -ne 0 ] || [ ! -f ${temp_root_dir}/${linux_dir}/arch/arm/boot/zImage ]; then
         	echo "Error: LINUX NOT BUILD.Please Get Some Error From build_linux.log"
@@ -250,7 +250,7 @@ build_buildroot(){
 		exit 1
 	fi
 	echo "--->Compiling ..."
-  	make ARCH=arm CROSS_COMPILE=${cross_compiler}- > ${temp_root_dir}/build_buildroot.log 2>&1
+  	make ARCH=arm CROSS_COMPILE=${cross_compiler}-
 
 	if [ $? -ne 0 ] || [ ! -d ${temp_root_dir}/${buildroot_dir}/output/target ]; then
         	echo "Error: BUILDROOT NOT BUILD.Please Get Some Error From build_buildroot.log"
