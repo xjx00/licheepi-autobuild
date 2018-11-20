@@ -1,6 +1,7 @@
 sudo: required
 language: bash
 script:
+  - sudo apt update && sudo apt install swig
   - chmod +x build.sh
   - ./build.sh pull_all
   - ./build.sh nano_tf
