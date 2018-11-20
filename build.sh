@@ -108,11 +108,11 @@ pull_all(){
 #env===================================================================
 update_env(){
 	if [ ! -d ${temp_root_dir}/${toolchain_dir}/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabi ]; then
-		if [ ! -d ${temp_root_dir}/${toolchain_dir}/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi ]; then
+		if [ ! -d ${temp_root_dir}/${toolchain_dir}/gcc-linaro-7.3.1-2018.05-x86_64_arm-linux-gnueabi ]; then
 			echo "Error:toolchain no found,Please use ./buid.sh pull_all "
 	    		exit 0
 		else			
-			export PATH="$PWD/${toolchain_dir}/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi/bin":"$PATH"
+			export PATH="$PWD/${toolchain_dir}/gcc-linaro-7.3.1-2018.05-x86_64_arm-linux-gnueabi/bin":"$PATH"
 		fi
 	else
 		export PATH="$PWD/${toolchain_dir}/gcc-linaro-7.2.1-2017.11-i686_arm-linux-gnueabi/bin":"$PATH"
