@@ -95,7 +95,7 @@ pull_all(){
 	pull_uboot
 	pull_linux
 	pull_toolchain
-	pull_buildroot
+	#pull_buildroot
 	cp -f ${temp_root_dir}/linux-licheepi_nano_spiflash_defconfig ${temp_root_dir}/${linux_dir}/arch/arm/configs/licheepi_nano_spiflash_defconfig
 	cp -f ${temp_root_dir}/linux-suniv-f1c100s-licheepi-nano-with-lcd.dts ${temp_root_dir}/${linux_dir}/arch/arm/boot/dts/suniv-f1c100s-licheepi-nano-with-lcd.dts
 	cp -f ${temp_root_dir}/uboot-licheepi_nano_defconfig ${temp_root_dir}/${u_boot_dir}/configs/licheepi_nano_defconfig
@@ -218,7 +218,7 @@ build_linux(){
         	exit 1
 	fi
 
-	if [ ! -f ${temp_root_dir}/${linux_dir}/arch/arm/boot/dts/suniv-f1c100s-licheepi-nano-with-lcd.dtb ]; then
+	if [ ! -f ${temp_root_dir}/${linux_dir}/arch/arm/boot/dts/suniv-f1c100s-licheepi-nano.dtb ]; then
         	echo "Error: UBOOT NOT BUILD.${temp_root_dir}/${linux_dir}/arch/arm/boot/dts/suniv-f1c100s-licheepi-nano-with-lcd.dtb not found"
         	exit 1
 	fi
@@ -266,7 +266,7 @@ copy_uboot(){
 }
 copy_linux(){
 	cp ${temp_root_dir}/${linux_dir}/arch/arm/boot/zImage ${temp_root_dir}/output/
-	cp ${temp_root_dir}/${linux_dir}/arch/arm/boot/dts/suniv-f1c100s-licheepi-nano-with-lcd.dtb ${temp_root_dir}/output/
+	cp ${temp_root_dir}/${linux_dir}/arch/arm/boot/dts/suniv-f1c100s-licheepi-nano.dtb ${temp_root_dir}/output/
 	mkdir -p ${temp_root_dir}/output/modules/
 	cp -rf ${temp_root_dir}/${linux_dir}/mod_output/lib ${temp_root_dir}/output/modules/
 	
