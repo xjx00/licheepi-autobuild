@@ -490,7 +490,7 @@ if [ "${1}" = "nano_tf" ]; then
 fi
 
 if [ "${1}" = "nano_linux" ]; then
-	linux_config_file="licheepi_nano_spiflash_defconfig"
+	linux_config_file="licheepi_nano_defconfig"
 	u_boot_config_file="licheepi_nano_defconfig"
 	u_boot_boot_cmd_file="tf_boot.cmd"
 	build_only_linux
