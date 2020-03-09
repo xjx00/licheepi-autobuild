@@ -44,7 +44,7 @@ pull_linux(){
 	#git clone --depth=1 -b nano-4.14-exp https://github.com/Lichee-Pi/linux.git
 	git clone -b nano-5.2-tf --depth=1 https://github.com/Lichee-Pi/linux.git
 	echo "patching..."
-        patch -d linux -p0 < ${temp_root_dir}/1.txt
+        patch -y -d linux -p0 < ${temp_root_dir}/1.txt
 	if [ ! -d ${temp_root_dir}/${linux_dir}/linux ]; then
 		echo "Error:pull linux failed"
     		exit 0
