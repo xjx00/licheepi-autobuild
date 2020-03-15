@@ -227,7 +227,7 @@ build_linux(){
 	#build linux kernel modules
 	make ARCH=arm CROSS_COMPILE=${cross_compiler}- -j${proc_processor} INSTALL_MOD_PATH=${temp_root_dir}/${linux_dir}/mod_output modules > /dev/null 2>&1
 	make ARCH=arm CROSS_COMPILE=${cross_compiler}- -j${proc_processor} INSTALL_MOD_PATH=${temp_root_dir}/${linux_dir}/mod_output modules_install > /dev/null 2>&1
-	
+	tar cvf ${temp_root_dir}/outputs
 	echo "Build linux ok"
 }
 #linux=========================================================
@@ -271,7 +271,7 @@ copy_linux(){
 	cp ${temp_root_dir}/${linux_dir}/arch/arm/boot/dts/suniv-f1c100s-licheepi-nano.dtb ${temp_root_dir}/output/
 	mkdir -p ${temp_root_dir}/output/modules/
 	cp -rf ${temp_root_dir}/${linux_dir}/mod_output/lib ${temp_root_dir}/output/modules/
-        tar cvf ${temp_root_dir}/output/kernel_modules.tar ${temp_root_dir}/output/modules
+	
 }
 copy_buildroot(){
 	cp -r ${temp_root_dir}/${buildroot_dir}/output/target ${temp_root_dir}/output/rootfs/
