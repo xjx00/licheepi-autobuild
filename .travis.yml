@@ -1,5 +1,13 @@
 sudo: required
 language: bash
+
+cache:
+  directories:
+    - $HOME/build/xjx00/licheepi-autobuild/Lichee-Pi-linux
+    - $HOME/build/xjx00/licheepi-autobuild/Lichee-Pi-linux
+    - $HOME/build/xjx00/licheepi-autobuild/buildroot-2018.02.2
+    - $HOME/build/xjx00/licheepi-autobuild/toolchain
+
 script:
   - sudo apt update && sudo apt install swig
   - chmod +x build.sh
