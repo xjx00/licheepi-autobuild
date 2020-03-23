@@ -11,7 +11,6 @@ cache:
 script:
   - sudo apt update && sudo apt install swig
   - chmod +x build.sh
-  - ./build.sh pull_all
   - ./build.sh nano_linux
 after_success:
   - ls -l
